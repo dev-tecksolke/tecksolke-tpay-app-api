@@ -2,13 +2,13 @@
 
 <p align="center">
   <b>Make It Happen</b><br>
-  <a href="https://github.com/dev-TecksolKE/tpay-api/issues">
+  <a href="https://github.com/dev-TecksolKE/tecksolke-tpay-app-api/issues">
   <img src="https://img.shields.io/github/issues/dev-TecksolKE/tecksolke-tpay-app-api.svg">
   </a>
-  <a href="https://github.com/dev-TecksolKE/tpay-api/network/members">
+  <a href="https://github.com/dev-TecksolKE/tecksolke-tpay-app-api/network/members">
   <img src="https://img.shields.io/github/forks/dev-TecksolKE/tecksolke-tpay-app-api.svg">
   </a>
-  <a href="https://github.com/dev-TecksolKE/tpay-api/stargazers">
+  <a href="https://github.com/dev-TecksolKE/tecksolke-tpay-app-api/stargazers">
   <img src="https://img.shields.io/github/stars/dev-TecksolKE/tecksolke-tpay-app-api.svg">
   </a>
   <br><br>
