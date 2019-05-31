@@ -150,7 +150,7 @@ Follow the steps below on how to use the api:
 
 | Version | Status     | Packagist           | Namespace    | Repo                |
 |---------|------------|---------------------|--------------|---------------------|
-| 1.x     | Latest     | `tecksolke-tpay/app-api` | `TPay\API` | [v1.0.0](https://github.com/dev-TecksolKE/tpay-api.git)|
+| 1.x     | Latest     | `tecksolke-tpay/app-api` | `TPay\API` | [v1.0.0](https://github.com/dev-TecksolKE/tecksolke-tpay-app-api/tree/1.0)|
 
 [tpay-api-1-repo]: https://github.com/dev-TecksolKE/tpay-api.git
 
