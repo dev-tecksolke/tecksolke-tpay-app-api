@@ -1,0 +1,29 @@
+{
+    "name": "tecksolke-tpay/app-api",
+    "description": "This package contains all tpay/api, that is api for making requests to t-pay payment gateway for any app.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dev-tecksolke",
+            "email": "client@tecksol.co.ke"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "TPay\\API\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TPay\\API\\TPayServiceProvider"
+            ]
+        }
+    }
+}
