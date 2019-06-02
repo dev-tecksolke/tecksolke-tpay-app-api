@@ -23,7 +23,10 @@
         "laravel": {
             "providers": [
                 "TPay\\API\\TPayServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "TPayAPI": "TPay\\API\\API\\TPayFacade"
+            }
         }
     }
 }
