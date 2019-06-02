@@ -150,7 +150,7 @@ We call ths TPayController to access the functions.
     
 ```
 #### Using Aliases
-In the Aliases we call TPayAPI to access the functions. To use alias it in *config/app.php*.
+In the Aliases we call TPayAPI to access the functions. To use alias configure it in *config/app.php*.
 
 ```php
 # First register the alias in the config/app.php file as shown here <-- App Aliases -->
@@ -163,7 +163,7 @@ In the Aliases we call TPayAPI to access the functions. To use alias it in *conf
  
  ],
 ```
-##### Accessing the api via aliase:
+##### Accessing the api via alias:
 
 ```php
  /**
