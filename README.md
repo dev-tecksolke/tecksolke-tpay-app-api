@@ -163,7 +163,7 @@ In the Aliases we call TPayAPI to access the functions.
  
  ],
 ```
-##### Accessing the api via alias:
+##### Accessing the api via aliase:
 
 ```php
  /**
