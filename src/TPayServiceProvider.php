@@ -3,6 +3,7 @@
 namespace TPay\API;
 
 use Illuminate\Support\ServiceProvider;
+use TPay\API\API\TPay;
 
 class TPayServiceProvider extends ServiceProvider {
     /**

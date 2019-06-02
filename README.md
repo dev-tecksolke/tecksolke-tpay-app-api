@@ -83,6 +83,9 @@ T_PAY_CONNECTION_TIMEOUT=
 ## Usage
 Follow the steps below on how to use the api:
 
+#### Direct Access
+We call ths TPayController to access the functions.
+
 ```php
     /**
      * ------------------------------------
@@ -143,8 +146,64 @@ Follow the steps below on how to use the api:
      * --------------------------------------------------------------------
     */
     return route('t-pay-app-balance');//http://hostname/t-pay/v1/balance
+    
+    
 ```
+#### Using Aliases
+In the Aliases we call TPayAPI to access the functions.
 
+```php
+# First register the aliase in the config/app.php file as shown here <-- App Aliases -->
+ 'aliases' => [
+       ---------------------------
+       Other Application Aliases
+       ---------------------------
+       
+        'TPayAPI' => \TPay\API\API\TPayFacade::class,
+ 
+ ],
+```
+##### Accessing the api via alias:
+
+```php
+ /**
+     * ------------------------------------
+     * Getting access token via the API.
+     * ------------------------------------
+     *
+     * To get the access token call
+     * the function as shown here.
+     *
+     * -------------------------------------------
+     * Note that for this you have to cache token
+     */
+    try {
+        return TPayAPI::getAccessToken();
+    } catch (Exception $exception) {
+        //catch exception here i.e do what you what if an exception occurs
+    }
+    
+    
+       /**
+         * -------------------------------------
+         * Getting the app balance
+         * -------------------------------------
+         * Getting the app balance do this
+         * as shown here.
+         *
+         * --------------------------------------------------------------------------------------------------
+         * We recommend to use this to access the app balance. Since here all the access token and cache is
+         * managed for you out of the box, so please follow this.
+         * --------------------------------------------------------------------------------------------------
+         */
+        try {
+            return TPayAPI::getAppBalance();
+        } catch (Exception $exception) {
+            //catch exception here i.e do what you what if an exception occurs
+        }
+        
+        
+```
 
 ## Version Guidance
 
