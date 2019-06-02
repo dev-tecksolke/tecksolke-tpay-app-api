@@ -150,10 +150,10 @@ We call ths TPayController to access the functions.
     
 ```
 #### Using Aliases
-In the Aliases we call TPayAPI to access the functions.
+In the Aliases we call TPayAPI to access the functions. To use alias it in *config/app.php*.
 
 ```php
-# First register the aliase in the config/app.php file as shown here <-- App Aliases -->
+# First register the alias in the config/app.php file as shown here <-- App Aliases -->
  'aliases' => [
        ---------------------------
        Other Application Aliases
