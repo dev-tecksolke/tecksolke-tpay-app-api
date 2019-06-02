@@ -1,7 +1,7 @@
 <?php
 
 
-namespace TPay\API;
+namespace TPay\API\API;
 
 
 use Illuminate\Support\Facades\Facade;
