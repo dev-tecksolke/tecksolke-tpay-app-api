@@ -45,7 +45,9 @@ class TPayServiceProvider extends ServiceProvider {
      * ---------------------
      */
     public function register() {
-      // do nothing here
+        $this->app->bind('tpay', function () {
+            return new TPay();
+        });
     }
 
 }
