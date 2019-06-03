@@ -13,7 +13,7 @@ class TPay {
      * ----------------------------
      * @throws \Exception
      */
-    public function getAccessToken() {
+    public static function getAccessToken() {
         (new TpayController())->getAccessToken();
     }
 
@@ -24,7 +24,7 @@ class TPay {
      * ----------------
      * @throws \Exception
      */
-    public function getAppBalance() {
+    public static function getAppBalance() {
         (new TpayController())->getAppBalance();
     }
 }

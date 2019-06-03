@@ -36,7 +36,7 @@ class TPayServiceProvider extends ServiceProvider {
          */
         $this->publishes([
             __DIR__ . '/config/tpay.php' => config_path('tpay.php'),
-        ]);
+        ],'config');
     }
 
     /**
@@ -46,7 +46,7 @@ class TPayServiceProvider extends ServiceProvider {
      * ---------------------
      */
     public function register() {
-        $this->app->bind('tpay', function () {
+        $this->app->bind('TPayAPI', function () {
             return new TPay();
         });
     }

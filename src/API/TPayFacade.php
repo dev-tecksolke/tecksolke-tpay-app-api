@@ -15,6 +15,6 @@ class TPayFacade extends Facade {
      * @return string
      */
     protected static function getFacadeAccessor() {
-        return 'tpay';
+        return 'TPayAPI';
     }
 }
