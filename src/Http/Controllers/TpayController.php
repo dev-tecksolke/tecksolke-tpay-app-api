@@ -110,8 +110,10 @@ class TpayController extends Controller {
         $response = json_decode((new TpayController())->processRequest('api/t-pay/v1/oauth/app-balance', (new TpayController())->setRequestOptions($data), 'GET'));
 
         /**
+         * --------------------------
          * extract the ap
          * balance from here
+         * ---------------------------
          */
         try {
             if ($response->data->success)
