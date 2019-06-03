@@ -150,7 +150,7 @@ We call ths TPayController to access the functions.
     
 ```
 #### Using Aliases
-We call the TPayAPI to access the api functions as shown here:
+We call the TPayAPI to access the api functions as shown here :-
 
 ```php
  /**
