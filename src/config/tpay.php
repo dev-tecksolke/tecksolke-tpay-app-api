@@ -34,6 +34,16 @@ return [
     'app_key' => env('T_PAY_APP_KEY', 'TP43C020782F'),//This is the app key for the specific app you are authenticating
 
     /**
+     * ------------------------------
+     * T-Pay Pusher App Key
+     * -----------------------------
+     * This is the key used to with your merchant account + app key to get you the access token.
+     * Without this key you may not get an access token.
+     * ------------------------------------------------------------------------------------------
+     */
+    'pusher_app_key' => env('T_PAY_PUSHER_APP_KEY', 'xZfofEl6YPjjPTgQ9Okoainl5kGfLcGTBZJy9Jxd'),//This key will only be changed by t-pay
+
+    /**
      * ---------------------------------------------------------------------------------------------------
      * Token session is the time given for the access token.
      * In simple words after every 10 minutes you have to get a new access token to authenticate your app.

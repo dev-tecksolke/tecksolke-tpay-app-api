@@ -41,13 +41,11 @@ class TpayController extends Controller {
      * @throws Exception
      */
     public function getAccessToken() {
-        //set request options here
+        // Set the request options
         $options = [
             'headers' => [
                 'Accept' => 'application/json',
-            ],
-            'json' => [
-                'app_key' => config('tpay.app_key'),
+                'Authorization' => 'Basic ' . base64_encode(config('tpay.pusher_app_key') . ':' . config('tpay.app_key')),
             ],
         ];
 
