@@ -1,6 +1,6 @@
 {
     "name": "tecksolke-tpay/app-api",
-    "description": "This package contains all tpay/api, that is api for making requests to t-pay payment gateway for any app.",
+    "description": "This package contains all t-pay/api, that is api for making requests to t-pay payment gateway for any app.",
     "type": "library",
     "license": "MIT",
     "authors": [
