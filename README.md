@@ -67,7 +67,7 @@ T_PAY_END_POINT_URL=
 # TP4*****82F <-- keep this key secret -->
 T_PAY_APP_KEY=
 
-# <-- keep this key secret -->
+# <-- keep this code secret -->
 T_PAY_APP_SECRET_CODE=
 
 # 10 <-- The access token session lifetime is in min i.e 10 minutes -->
@@ -124,7 +124,7 @@ This how the api will be accessed via this package...
                    'phoneNumber' => '',//The phone number has to be 2547xxxxxxx
                    'referenceCode' => '',//The secret code should be unique in every request you send and must start with TPXXXX
                    'amount' => 1,//Amount has to be an integer and less than KES 70000
-                   'resultURL' => '',//This has to be your callback i.e https://mydomain/callback
+                   'resultURL' => '',//This has to be your callback i.e https://mydomain/callback or http://mydomain/callback
                ];
    
                //make the c2b stk push here
@@ -149,7 +149,7 @@ This how the api will be accessed via this package...
                    'phoneNumber' => '',//The phone number has to be 2547xxxxxxx
                    'referenceCode' => '',//The secret code should be unique in every request you send and must start with TPXXXX
                    'amount' => 1,//Amount has to be an integer and has to be greater than KES 10
-                   'resultURL' => '',//This has to be your callback i.e https://mydomain/callback
+                   'resultURL' => '',//This has to be your callback i.e https://mydomain/callback or http://mydomain/callback
                ];
    
                //make the b2c withdraw here
