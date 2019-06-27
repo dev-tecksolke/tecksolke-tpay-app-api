@@ -2,14 +2,14 @@
 
 <p align="center">
   <b>Make It Happen</b><br>
-  <a href="https://github.com/dev-TecksolKE/tecksolke-tpay-app-api/issues">
-  <img src="https://img.shields.io/github/issues/dev-TecksolKE/tecksolke-tpay-app-api.svg">
+  <a href="https://github.com/dev-tecksolke/tecksolke-tpay-app-api/issues">
+  <img src="https://img.shields.io/github/issues/dev-tecksolke/tecksolke-tpay-app-api.svg">
   </a>
-  <a href="https://github.com/dev-TecksolKE/tecksolke-tpay-app-api/network/members">
-  <img src="https://img.shields.io/github/forks/dev-TecksolKE/tecksolke-tpay-app-api.svg">
+  <a href="https://github.com/dev-tecksolke/tecksolke-tpay-app-api/network/members">
+  <img src="https://img.shields.io/github/forks/dev-tecksolke/tecksolke-tpay-app-api.svg">
   </a>
-  <a href="https://github.com/dev-TecksolKE/tecksolke-tpay-app-api/stargazers">
-  <img src="https://img.shields.io/github/stars/dev-TecksolKE/tecksolke-tpay-app-api.svg">
+  <a href="https://github.com/dev-tecksolke/tecksolke-tpay-app-api/stargazers">
+  <img src="https://img.shields.io/github/stars/dev-tecksolke/tecksolke-tpay-app-api.svg">
   </a>
   <br><br>
   <img src="http://s.4cdn.org/image/title/105.gif">
@@ -168,9 +168,9 @@ This how the api will be accessed via this package...
 
 | Version | Status     | Packagist           | Namespace    | Repo                |
 |---------|------------|---------------------|--------------|---------------------|
-| 1.x     | Latest     | `tecksolke-tpay/app-api` | `TPay\API` | [v1.0.0](https://github.com/dev-TecksolKE/tecksolke-tpay-app-api/tree/1.0)|
+| 1.x     | Latest     | `tecksolke-tpay/app-api` | `TPay\API` | [v1.0.0](https://github.com/dev-tecksolke/tecksolke-tpay-app-api/tree/1.0)|
 
-[tpay-api-1-repo]: https://github.com/dev-TecksolKE/tpay-api.git
+[tpay-api-1-repo]: https://github.com/dev-tecksolke/tpay-api.git
 
 ## Security Vulnerabilities
  For any security vulnerabilities, please email to [TecksolKE](mailto:client@tecksol.co.ke).
