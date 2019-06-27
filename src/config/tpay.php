@@ -60,7 +60,7 @@ return [
      * Note that the access token is a bearer access token.
      * ---------------------------------------------------------------------------------------------------
      */
-    'token_session' => env('T_PAY_TOKEN_SESSION', 60),//The access token session lifetime is in min i.e 60 minutes
+    'token_session' => env('T_PAY_TOKEN_SESSION', 58),//The access token session lifetime is in min i.e 60 minutes
 
     /**
      * ---------------------------------------------------------------------------------------------------

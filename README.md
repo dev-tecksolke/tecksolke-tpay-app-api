@@ -70,7 +70,7 @@ T_PAY_APP_KEY=
 # <-- keep this code secret -->
 T_PAY_APP_SECRET_CODE=
 
-# 10 <-- The access token session lifetime is in min i.e 10 minutes -->
+# 60 <-- The access token session lifetime is in minutes i.e 60 minutes --> ->default(58 minutes);
 T_PAY_TOKEN_SESSION=
 
 # 120 <-- Response timeout 120 seconds -->
