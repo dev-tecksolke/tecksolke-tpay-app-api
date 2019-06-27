@@ -6,7 +6,7 @@
  *
  * -------------------------------------------------------------
  *
- * TODO the t-pay token session expires after every 10min
+ * TODO the t-pay token session expires after every 60min/1Hr
  *
  * -------------------------------------------------------------
  */
@@ -19,7 +19,7 @@ return [
      * are sent and responses given back.
      * -------------------------------------------------------------------
      */
-    'end_point_url' => env('T_PAY_END_POINT_URL', 'https://tpay.co.ke/'),//This contains the end point url
+    'end_point_url' => env('T_PAY_END_POINT_URL', 'https://sandbox.tpay.co.ke/api/t-pay/v1/oauth2/'),//This contains the end point url
 
     /**
      * ---------------------------------------------------
@@ -32,6 +32,16 @@ return [
      * -------------------------------------------------------------
      */
     'app_key' => env('T_PAY_APP_KEY', 'TP43C020782F'),//This is the app key for the specific app you are authenticating
+
+
+    /**
+     * --------------------
+     * The app secret code
+     * ---------------------
+     * The app secret code is used to identify your app during every request you make
+     * The app secret code can change depending on the app environment that is  [production/sandbox]
+     */
+    'app_secret_code' => env('T_PAY_APP_SECRET_CODE', 'yn9ou8Sknw1k8pWVol3yglYRP9NIij4viDoCJZBBIG3spNiCIl'),
 
     /**
      * ------------------------------
@@ -46,11 +56,11 @@ return [
     /**
      * ---------------------------------------------------------------------------------------------------
      * Token session is the time given for the access token.
-     * In simple words after every 10 minutes you have to get a new access token to authenticate your app.
+     * In simple words after every 60 minutes you have to get a new access token to authenticate your app.
      * Note that the access token is a bearer access token.
      * ---------------------------------------------------------------------------------------------------
      */
-    'token_session' => env('T_PAY_TOKEN_SESSION', 10),//The access token session lifetime is in min i.e 10 minutes
+    'token_session' => env('T_PAY_TOKEN_SESSION', 60),//The access token session lifetime is in min i.e 60 minutes
 
     /**
      * ---------------------------------------------------------------------------------------------------

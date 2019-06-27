@@ -3,7 +3,6 @@
 namespace TPay\API;
 
 use Illuminate\Support\ServiceProvider;
-use TPay\API\API\TPay;
 
 class TPayServiceProvider extends ServiceProvider {
     /**
@@ -14,19 +13,12 @@ class TPayServiceProvider extends ServiceProvider {
      */
     public function boot() {
         /**
-         * ---------------------------
-         * load package routes here
-         * ---------------------------
-         */
-        $this->loadRoutesFrom(__DIR__ . '/routes/api.php');
-
-        /**
          * -------------------------------------------------
          * load all the configurations for the package here
          * -------------------------------------------------
          */
         $this->mergeConfigFrom(
-            __DIR__ . '/config/tpay.php', 'tpay'
+            __DIR__ . '/config/t-pay.php', 'tpay'
         );
 
         /**
@@ -35,8 +27,8 @@ class TPayServiceProvider extends ServiceProvider {
          * -----------------------------------------
          */
         $this->publishes([
-            __DIR__ . '/config/tpay.php' => config_path('tpay.php'),
-        ],'config');
+            __DIR__ . '/config/t-pay.php' => config_path('t-pay.php'),
+        ], 'config');
     }
 
     /**
@@ -46,9 +38,7 @@ class TPayServiceProvider extends ServiceProvider {
      * ---------------------
      */
     public function register() {
-        $this->app->bind('TPayAPI', function () {
-            return new TPay();
-        });
+        //TODO Nothing.....
     }
 
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace TPay\API\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+namespace TPay\API\API;
+
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
@@ -10,8 +10,9 @@ use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\ServerException;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
+use TPay\API\Urls\Urls;
 
-class TpayController extends Controller {
+class TPayGateWay {
     /**
      * @var Client
      */
@@ -24,11 +25,11 @@ class TpayController extends Controller {
      * @return void
      */
     public function __construct() {
-        $this->middleware('guest');
         $this->client = new Client([
-            'base_uri' => config('tpay.end_point_url'),
-            'timeout' => config('tpay.timeout'),
-            'connect_timeout' => config('tpay.connect_timeout'),
+            'base_uri' => config('t-pay.end_point_url'),
+            'timeout' => config('t-pay.timeout'),
+            'connect_timeout' => config('t-pay.connect_timeout'),
+            'protocols' => ['http', 'https'],
         ]);
         $this->accessToken;
     }
@@ -40,16 +41,17 @@ class TpayController extends Controller {
      * @return Exception
      * @throws Exception
      */
-    public function getAccessToken() {
+    private function getAccessToken() {
         // Set the request options
         $options = [
             'headers' => [
                 'Accept' => 'application/json',
-                'Authorization' => 'Basic ' . base64_encode(config('tpay.pusher_app_key') . ':' . config('tpay.app_key')),
+                'Authorization' => 'Basic ' . base64_encode(config('t-pay.pusher_app_key') . ':' . config('t-pay.app_key')),
             ],
         ];
 
-        $response = json_decode($this->processRequest('api/t-pay/v1/oauth/access-token', $options, 'GET'));
+        $response = json_decode($this->processRequest(Urls::$app_access_token_url, $options, 'GET'));
+        dd($response);
 
         try {
             if ($response->data->success) {
@@ -69,8 +71,8 @@ class TpayController extends Controller {
      * @return mixed
      * -----------------------------------------------------------------
      */
-    public function cacheAccessToken() {
-        return Cache::remember('t-pay-access-token', now()->addMinutes(config('tpay.token_session')), function () {
+    private function cacheAccessToken() {
+        return Cache::remember('t-pay-access-token', now()->addMinutes(config('t-pay.token_session')), function () {
             return $this->getAccessToken();
         });
     }
@@ -94,37 +96,6 @@ class TpayController extends Controller {
         ];
     }
 
-    /**
-     * -------------------------------------------------
-     * request the balance here
-     * @return Exception|GuzzleException|string
-     * @throws Exception
-     * -------------------------------------------------
-     */
-    public function getAppBalance() {
-        $data = [
-            'app_key' => config('tpay.app_key'),
-        ];
-
-        //send the request
-        $response = json_decode((new TpayController())->processRequest('api/t-pay/v1/oauth/app-balance', (new TpayController())->setRequestOptions($data), 'GET'));
-
-        /**
-         * --------------------------
-         * extract the ap
-         * balance from here
-         * ---------------------------
-         */
-        try {
-            if ($response->data->success)
-                return $response->data->balance;
-            return 0;
-        } catch (Exception $exception) {
-            throw new Exception($exception->getMessage());
-        }
-
-    }
-
 
     /**
      * function process request
@@ -137,7 +108,7 @@ class TpayController extends Controller {
      */
     public function processRequest(string $url, array $options, $method = "POST") {
         try {
-            $response = (new TpayController())->client->request($method, $url, $options);
+            $response = (new TPayGateWay())->client->request($method, $url, $options);
 
             return ($response->getBody()->getContents());
         } catch (ClientException $clientException) {
