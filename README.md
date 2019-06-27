@@ -20,7 +20,7 @@ T-Pay API is REST-API that makes it easy for one to make request to the T-Pay Pa
 - The API is simple and easy to install.
 - Has both B2C and C2B API for your App's.
 - The API can only be used by those having apps, in T-Pay Payment Gateway.
-- The API is based on PHP *[Laravel Framework](https://laravel.com/)*
+- The API is based on PHP *[Laravel Framework](https://laravel.com/)*. But you can try to install and customize it basing on your *PHP* development platform.
 
 ## Help and docs
 
