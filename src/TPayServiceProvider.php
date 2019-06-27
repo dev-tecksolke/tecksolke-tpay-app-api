@@ -22,9 +22,10 @@ class TPayServiceProvider extends ServiceProvider {
         );
 
         /**
-         * -----------------------------------------
+         * ----------------------------------------------
          * publishing configurations of the package
-         * -----------------------------------------
+         * For developer to change the app configuration
+         * ----------------------------------------------
          */
         $this->publishes([
             __DIR__ . '/config/t-pay.php' => config_path('t-pay.php'),

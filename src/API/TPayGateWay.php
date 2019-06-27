@@ -42,6 +42,7 @@ class TPayGateWay {
      * @throws Exception
      */
     private function getAccessToken() {
+        dd(config('t-pay.end_point_url'));
         // Set the request options
         $options = [
             'headers' => [
