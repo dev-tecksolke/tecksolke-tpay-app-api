@@ -123,7 +123,7 @@ This how the api will be accessed via this package...
                    'secretCode' => '',//This has to be your app T_PAY_APP_SECRET_CODE
                    'phoneNumber' => '',//The phone number has to be 2547xxxxxxx
                    'referenceCode' => '',//The secret code should be unique in every request you send and must start with TPXXXX
-                   'amount' => 1,//Amount has to be an integer
+                   'amount' => 1,//Amount has to be an integer and less than KES 70000
                    'resultURL' => '',//This has to be your callback i.e https://mydomain/callback
                ];
    
@@ -148,7 +148,7 @@ This how the api will be accessed via this package...
                    'secretCode' => '',//This has to be your app T_PAY_APP_SECRET_CODE
                    'phoneNumber' => '',//The phone number has to be 2547xxxxxxx
                    'referenceCode' => '',//The secret code should be unique in every request you send and must start with TPXXXX
-                   'amount' => 1,//Amount has to be an integer and > 10
+                   'amount' => 1,//Amount has to be an integer and has to be greater than KES 10
                    'resultURL' => '',//This has to be your callback i.e https://mydomain/callback
                ];
    
