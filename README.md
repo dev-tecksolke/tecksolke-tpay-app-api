@@ -21,11 +21,10 @@ T-Pay API is REST-API that makes it easy for one to make request to the T-Pay Pa
 - Has both B2C and C2B API for your App's.
 - The API can only be used by those having apps, in T-Pay Payment Gateway.
 - The API is based on PHP *[Laravel Framework](https://laravel.com/)*
-- One can change the API to accomplish his/her needs.
 
 ## Help and docs
 
-- [API Documentation](https://tpay.co.ke/)
+- [API Documentation](https://developer.tpay.co.ke/)
 
 
 ## Installing
@@ -62,11 +61,14 @@ php artisan vendor:publish --provider="TPay\API\TPayServiceProvider"
 You will have to provide this in the *.env* for the api configurations:
 
 ```php
-# https://tpay.co.ke/
+# https://sandbox.tpay.co.ke/api/t-pay/v1/oauth2/
 T_PAY_END_POINT_URL=
 
 # TP4*****82F <-- keep this key secret -->
 T_PAY_APP_KEY=
+
+# <-- keep this key secret -->
+T_PAY_APP_SECRET_CODE=
 
 # 10 <-- The access token session lifetime is in min i.e 10 minutes -->
 T_PAY_TOKEN_SESSION=
@@ -83,113 +85,83 @@ T_PAY_CONNECTION_TIMEOUT=
 ## Usage
 Follow the steps below on how to use the api:
 
-#### Direct Access
-We call ths TPayController to access the functions.
+#### How to use the API
+This how the api will be accessed via this package...
 
 ```php
-    /**
-     * ------------------------------------
-     * Getting access token via the API.
-     * ------------------------------------
-     *
-     * To get the access token call
-     * the function as shown here.
-     *
-     * -------------------------------------------
-     * Note that for this you have to cache token
-     */
-    try {
-        return (new \TPay\API\Http\Controllers\TpayController())->getAccessToken();
-    } catch (Exception $exception) {
-        //catch exception here i.e do what you what if an exception occurs
-    }
-
-    /**
-     * ------------------------------------------------
-     * Or you can use a route to get the access token
-     * as shown.
-     * ------------------------------------------------
-     * If you use the route to get the access token
-     * remember to cache it with the defined token_session in the
-     * config/tpay.php file
-     * --------------------------------------------------------------
-     */
-    return route('t-pay-token');//http://hostname/t-pay/v1/token
-
-
-    /**
-     * -------------------------------------
-     * Getting the app balance
-     * -------------------------------------
-     * Getting the app balance do this
-     * as shown here.
-     *
-     * --------------------------------------------------------------------------------------------------
-     * We recommend to use this to access the app balance. Since here all the access token and cache is
-     * managed for you out of the box, so please follow this.
-     * --------------------------------------------------------------------------------------------------
-     */
-    try {
-        return (new \TPay\API\Http\Controllers\TpayController())->getAppBalance();
-    } catch (Exception $exception) {
-        //catch exception here i.e do what you what if an exception occurs
-    }
-
-    /**
-     * -------------------------------
-     * Get balance form the route url
-     * -------------------------------
-     *
-     * --------------------------------------------------------------------
-     * Also requesting balance via here does the same everything is already
-     * done for you.
-     * --------------------------------------------------------------------
-    */
-    return route('t-pay-app-balance');//http://hostname/t-pay/v1/balance
-    
-    
-```
-#### Using Aliases
-We call the TPayAPI to access the api functions as shown here :-
-
-```php
- /**
-     * ------------------------------------
-     * Getting access token via the API.
-     * ------------------------------------
-     *
-     * To get the access token call
-     * the function as shown here.
-     *
-     * -------------------------------------------
-     * Note that for this you have to cache token
-     */
-    try {
-        return TPayAPI::getAccessToken();
-    } catch (Exception $exception) {
-        //catch exception here i.e do what you what if an exception occurs
-    }
-    
-    
+     /**
+        * ---------------------------------
+        *  Test for requesting app balance
+        * ---------------------------------
+        * @throws \Exception
+        */
+       public function appBalance() {
+           try {
+               //Set request options as shown here
+               $options = [
+                   'secretCode' => '',//This has to be your app T_PAY_APP_SECRET_CODE
+               ];
+   
+               //make request here
+               $response = TPay\API\API\AppBalances::appBalances($options);
+   
+               //continue with what you what to do with the $response here
+           } catch (\Exception $exception) {
+               //TODO If an exception occurs
+           }
+       }
+   
        /**
-         * -------------------------------------
-         * Getting the app balance
-         * -------------------------------------
-         * Getting the app balance do this
-         * as shown here.
-         *
-         * --------------------------------------------------------------------------------------------------
-         * We recommend to use this to access the app balance. Since here all the access token and cache is
-         * managed for you out of the box, so please follow this.
-         * --------------------------------------------------------------------------------------------------
-         */
-        try {
-            return TPayAPI::getAppBalance();
-        } catch (Exception $exception) {
-            //catch exception here i.e do what you what if an exception occurs
-        }
-        
-        
+        * ------------------------------------
+        * Making app stk push request for c2b
+        * ------------------------------------
+        */
+       public function appC2BSTKPush() {
+           try {
+               //Set request options as shown here
+               $options = [
+                   'secretCode' => '',//This has to be your app T_PAY_APP_SECRET_CODE
+                   'phoneNumber' => '',//The phone number has to be 2547xxxxxxx
+                   'referenceCode' => '',//The secret code should be unique in every request you send and must start with TPXXXX
+                   'amount' => 1,//Amount has to be an integer
+                   'resultURL' => '',//This has to be your callback i.e https://mydomain/callback
+               ];
+   
+               //make the c2b stk push here
+               $response = TPay\API\API\AppC2BSTKPush::appC2BSTKPush($options);
+   
+               //continue with what you what to do with the $response here
+           } catch (\Exception $exception) {
+               //TODO If an exception occurs
+           }
+       }
+   
+       /**
+        * ------------------------------------
+        * Making app withdraw request for b2c
+        * ------------------------------------
+        */
+       public function appB2C() {
+           try {
+               //Set request options as shown here
+               $options = [
+                   'secretCode' => '',//This has to be your app T_PAY_APP_SECRET_CODE
+                   'phoneNumber' => '',//The phone number has to be 2547xxxxxxx
+                   'referenceCode' => '',//The secret code should be unique in every request you send and must start with TPXXXX
+                   'amount' => 1,//Amount has to be an integer and > 10
+                   'resultURL' => '',//This has to be your callback i.e https://mydomain/callback
+               ];
+   
+               //make the b2c withdraw here
+               $response = TPay\API\API\AppB2C::appB2C($options);
+   
+               //continue with what you what to do with the $response here
+           } catch (\Exception $exception) {
+               //TODO If an exception occurs
+           }
+       }
+    
+    
 ```
 
 ## Version Guidance

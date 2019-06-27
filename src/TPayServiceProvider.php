@@ -18,7 +18,7 @@ class TPayServiceProvider extends ServiceProvider {
          * -------------------------------------------------
          */
         $this->mergeConfigFrom(
-            __DIR__ . '/config/t-pay.php', 'tpay'
+            __DIR__ . '/config/tpay.php', 'tpay'
         );
 
         /**
@@ -28,7 +28,7 @@ class TPayServiceProvider extends ServiceProvider {
          * ----------------------------------------------
          */
         $this->publishes([
-            __DIR__ . '/config/t-pay.php' => config_path('t-pay.php'),
+            __DIR__ . '/config/tpay.php' => config_path('tpay.php'),
         ], 'config');
     }
 

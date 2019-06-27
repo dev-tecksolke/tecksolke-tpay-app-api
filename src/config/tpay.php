@@ -31,7 +31,7 @@ return [
      * it in a production environment.
      * -------------------------------------------------------------
      */
-    'app_key' => env('T_PAY_APP_KEY', 'TP43C020782F'),//This is the app key for the specific app you are authenticating
+    'app_key' => env('T_PAY_APP_KEY', 'TPCD9701CFE0'),//This is the app key for the specific app you are authenticating
 
 
     /**

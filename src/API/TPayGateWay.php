@@ -26,9 +26,9 @@ class TPayGateWay {
      */
     public function __construct() {
         $this->client = new Client([
-            'base_uri' => config('t-pay.end_point_url'),
-            'timeout' => config('t-pay.timeout'),
-            'connect_timeout' => config('t-pay.connect_timeout'),
+            'base_uri' => config('tpay.end_point_url'),
+            'timeout' => config('tpay.timeout'),
+            'connect_timeout' => config('tpay.connect_timeout'),
             'protocols' => ['http', 'https'],
         ]);
         $this->accessToken;
@@ -42,17 +42,15 @@ class TPayGateWay {
      * @throws Exception
      */
     private function getAccessToken() {
-        dd(config('t-pay.end_point_url'));
         // Set the request options
         $options = [
             'headers' => [
                 'Accept' => 'application/json',
-                'Authorization' => 'Basic ' . base64_encode(config('t-pay.pusher_app_key') . ':' . config('t-pay.app_key')),
+                'Authorization' => 'Basic ' . base64_encode(config('tpay.pusher_app_key') . ':' . config('tpay.app_key')),
             ],
         ];
 
         $response = json_decode($this->processRequest(Urls::$app_access_token_url, $options, 'GET'));
-        dd($response);
 
         try {
             if ($response->data->success) {
@@ -73,7 +71,7 @@ class TPayGateWay {
      * -----------------------------------------------------------------
      */
     private function cacheAccessToken() {
-        return Cache::remember('t-pay-access-token', now()->addMinutes(config('t-pay.token_session')), function () {
+        return Cache::remember('t-pay-access-token', now()->addMinutes(config('tpay.token_session')), function () {
             return $this->getAccessToken();
         });
     }
