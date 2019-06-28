@@ -174,3 +174,6 @@ This how the api will be accessed via this package...
 
 ## Security Vulnerabilities
  For any security vulnerabilities, please email to [TecksolKE](mailto:client@tecksol.co.ke).
+ 
+## License
+ This package is open-source API licensed under the [MIT license](https://opensource.org/licenses/MIT).
