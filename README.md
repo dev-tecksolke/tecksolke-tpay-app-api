@@ -24,7 +24,7 @@ T-Pay API is REST-API that makes it easy for one to make request to the T-Pay Pa
 
 ## Help and docs
 
-- [API Documentation](https://developer.tpay.co.ke/)
+- [API Documentation](https://dev.tpay.co.ke/)
 
 
 ## Installing
