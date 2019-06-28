@@ -103,7 +103,7 @@ This how the api will be accessed via this package...
                ];
    
                //make request here
-               $response = TPay\API\API\AppBalances::appBalances($options);
+               $response = AppBalances::appBalances($options);
    
                //continue with what you what to do with the $response here
            } catch (\Exception $exception) {
@@ -123,12 +123,12 @@ This how the api will be accessed via this package...
                    'secretCode' => '',//This has to be your app T_PAY_APP_SECRET_CODE
                    'phoneNumber' => '',//The phone number has to be 2547xxxxxxx
                    'referenceCode' => '',//The secret code should be unique in every request you send and must start with TPXXXX
-                   'amount' => 1,//Amount has to be an integer and less than KES 70000
+                   'amount' => 1,//Amount has to be an integer and less than or equal to KES 70000
                    'resultURL' => '',//This has to be your callback i.e https://mydomain/callback or http://mydomain/callback
                ];
    
                //make the c2b stk push here
-               $response = TPay\API\API\AppC2BSTKPush::appC2BSTKPush($options);
+               $response = AppC2BSTKPush::appC2BSTKPush($options);
    
                //continue with what you what to do with the $response here
            } catch (\Exception $exception) {
@@ -153,7 +153,7 @@ This how the api will be accessed via this package...
                ];
    
                //make the b2c withdraw here
-               $response = TPay\API\API\AppB2C::appB2C($options);
+               $response = AppB2C::appB2C($options);
    
                //continue with what you what to do with the $response here
            } catch (\Exception $exception) {
