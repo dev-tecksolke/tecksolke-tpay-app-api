@@ -17,7 +17,7 @@ class AppC2BSTKPush {
      */
     public static function appC2BSTKPush(array $options) {
         try {
-            $response = (new TPayGateWay())->processRequest(Urls::$app_c2b_stk_url, (new TPayGateWay())->setRequestOptions($options));
+            $response = json_decode((new TPayGateWay())->processRequest(Urls::$app_c2b_stk_url, (new TPayGateWay())->setRequestOptions($options)));
 
             return $response;
 

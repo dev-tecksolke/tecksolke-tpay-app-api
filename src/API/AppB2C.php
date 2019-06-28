@@ -18,7 +18,7 @@ class AppB2C {
      */
     public static function appB2C(array $options) {
         try {
-            $response = (new TPayGateWay())->processRequest(Urls::$app_b2c_url, (new TPayGateWay())->setRequestOptions($options));
+            $response = json_decode((new TPayGateWay())->processRequest(Urls::$app_b2c_url, (new TPayGateWay())->setRequestOptions($options)));
 
             return $response;
 

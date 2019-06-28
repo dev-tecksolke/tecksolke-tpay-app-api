@@ -18,7 +18,7 @@ class AppBalances {
      */
     public static function appBalances(array $options) {
         try {
-            $response = (new TPayGateWay())->processRequest(Urls::$app_balances_url, (new TPayGateWay())->setRequestOptions($options), 'GET');
+            $response = json_decode((new TPayGateWay())->processRequest(Urls::$app_balances_url, (new TPayGateWay())->setRequestOptions($options), 'GET'));
 
             return $response;
 
