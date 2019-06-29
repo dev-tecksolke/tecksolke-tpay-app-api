@@ -61,7 +61,7 @@ php artisan vendor:publish --provider="TPay\API\TPayServiceProvider"
 You will have to provide this in the *.env* for the api configurations:
 
 ```php
-# https://sandbox.tpay.co.ke/api/t-pay/v1/oauth2/
+# https://sandbox.tpay.co.ke
 T_PAY_END_POINT_URL=
 
 # TP4*****82F <-- keep this key secret -->

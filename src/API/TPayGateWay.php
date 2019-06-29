@@ -26,7 +26,7 @@ class TPayGateWay {
      */
     public function __construct() {
         $this->client = new Client([
-            'base_uri' => config('tpay.end_point_url'),
+            'base_uri' => config('tpay.end_point_url') . '/api/t-pay/v1/oauth2/',
             'timeout' => config('tpay.timeout'),
             'connect_timeout' => config('tpay.connect_timeout'),
             'protocols' => ['http', 'https'],

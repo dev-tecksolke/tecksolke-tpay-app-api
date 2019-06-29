@@ -19,7 +19,7 @@ return [
      * are sent and responses given back.
      * -------------------------------------------------------------------
      */
-    'end_point_url' => env('T_PAY_END_POINT_URL', 'https://sandbox.tpay.co.ke/api/t-pay/v1/oauth2/'),//This contains the end point url
+    'end_point_url' => env('T_PAY_END_POINT_URL', 'https://sandbox.tpay.co.ke'),//This contains the end point url
 
     /**
      * ---------------------------------------------------
