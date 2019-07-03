@@ -29,7 +29,7 @@ T-Pay API is REST-API that makes it easy for one to make request to the T-Pay Pa
 
 ## Installing
 
-The recommended way to install tpay-api is through
+The recommended way to install tpay-app-api is through
 [Composer](http://getcomposer.org).
 
 ```bash
@@ -37,7 +37,7 @@ The recommended way to install tpay-api is through
 composer require tecksolke-tpay/app-api
 ```
 
-Next, run the Composer command to install the latest stable version of *tpay/api*:
+Next, run the Composer command to install the latest stable version of *tpay/app-api*:
 
 ```bash
 # Update package via composer
@@ -168,7 +168,7 @@ This how the api will be accessed via this package...
 
 | Version | Status     | Packagist           | Namespace    | Repo                |
 |---------|------------|---------------------|--------------|---------------------|
-| 1.x     | Latest     | `tecksolke-tpay/app-api` | `TPay\API` | [v1.0.0](https://github.com/dev-tecksolke/tecksolke-tpay-app-api/tree/1.0)|
+| 1.x     | Latest     | `tecksolke-tpay/app-api` | `TPay\API` | [v1.7.7](https://github.com/dev-tecksolke/tecksolke-tpay-app-api/tree/1.0)|
 
 [tpay-api-1-repo]: https://github.com/dev-tecksolke/tpay-api.git
 
