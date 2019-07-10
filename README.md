@@ -91,7 +91,7 @@ This how the api will be accessed via this package...
 ```php
      /**
         * ---------------------------------
-        *  Test for requesting app balance
+        *  Test for requesting app balance [ GET Request  ]
         * ---------------------------------
         * @throws \Exception
         */
@@ -115,7 +115,7 @@ This how the api will be accessed via this package...
 
         /**
          * ------------------
-         * Express Payment
+         * Express Payment [ POST Request ]
          * -----------------
          * This is used to directly get payment from
          * a client account to your application
@@ -142,7 +142,7 @@ This how the api will be accessed via this package...
    
        /**
         * ------------------------------------
-        * Making app stk push request for c2b
+        * Making app stk push request for c2b  [ POST Request ]
         * ------------------------------------
         */
        public function appC2BSTKPush() {
@@ -167,7 +167,7 @@ This how the api will be accessed via this package...
    
        /**
         * ------------------------------------
-        * Making app withdraw request for b2c
+        * Making app withdraw request for b2c  [ POST Request ]
         * ------------------------------------
         */
        public function appB2C() {
@@ -197,7 +197,7 @@ This how the api will be accessed via this package...
 
 | Version | Status     | Packagist           | Namespace    | Repo                |
 |---------|------------|---------------------|--------------|---------------------|
-| 1.x     | Latest     | `tecksolke-tpay/app-api` | `TPay\API` | [v1.8.8](https://github.com/dev-tecksolke/tecksolke-tpay-app-api/tree/1.0)|
+| 1.x     | Latest     | `tecksolke-tpay/app-api` | `TPay\API` | [v1.9.9](https://github.com/dev-tecksolke/tecksolke-tpay-app-api/tree/1.0)|
 
 [tpay-api-1-repo]: https://github.com/dev-tecksolke/tpay-api.git
 
