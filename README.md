@@ -110,6 +110,35 @@ This how the api will be accessed via this package...
                //TODO If an exception occurs
            }
        }
+       
+       
+
+        /**
+         * ------------------
+         * Express Payment
+         * -----------------
+         * This is used to directly get payment from
+         * a client account to your application
+         */
+        public function expressPayment() {
+            try {
+                $options = [
+                    'referenceCode' => '',//Unique referenceCode i.e TPXXXXX
+                    'redirectURL' => '',//This is the URL that the user will be redirect after payment
+                    'resultURL' => '',//This is the url that will receive the response data after successful payment
+                    'amount' => 1,//amount to be paid 
+                ];
+    
+                //make the request here
+                $response = ExpressPayment::expressPayment($options);
+    
+                //proceed with the response
+    
+            } catch (Exception $exception) {
+                //TODO If an exception occurs
+            }
+        }
+
    
        /**
         * ------------------------------------
@@ -168,7 +197,7 @@ This how the api will be accessed via this package...
 
 | Version | Status     | Packagist           | Namespace    | Repo                |
 |---------|------------|---------------------|--------------|---------------------|
-| 1.x     | Latest     | `tecksolke-tpay/app-api` | `TPay\API` | [v1.7.7](https://github.com/dev-tecksolke/tecksolke-tpay-app-api/tree/1.0)|
+| 1.x     | Latest     | `tecksolke-tpay/app-api` | `TPay\API` | [v1.8.8](https://github.com/dev-tecksolke/tecksolke-tpay-app-api/tree/1.0)|
 
 [tpay-api-1-repo]: https://github.com/dev-tecksolke/tpay-api.git
 

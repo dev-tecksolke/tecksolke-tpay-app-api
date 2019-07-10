@@ -15,4 +15,5 @@ class Urls {
     public static $app_c2b_stk_url = 'app-stk-deposit';//Post Request
     public static $app_c2b_url = '';//Post Request
     public static $app_b2c_url = 'app-b2c-withdraw';//Post Request
+    public static $express_payment_url = 'express-payment';//GET Request
 }
