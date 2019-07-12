@@ -193,6 +193,62 @@ This how the api will be accessed via this package...
     
 ```
 
+## API Response(s)
+This is for B2C success -- The withdraw has been received --
+
+```php
+{
+    "success":true,
+    "data":{
+        "appName":"tpay",
+        "referenceCode":"TPFC9FFF2A3B",
+        "receiver":"254716298347 - Urbanus Aristariko Maina",
+        "transactionID":"NGC68LSJV4",
+        "amount":50
+         }
+}
+```
+
+This is for B2C failed -- The withdraw has not been received --
+
+```php
+{
+    "success":false,
+    "data":{
+        "appName":"tpay",
+        "referenceCode":"TPFC9FFF2A3B",
+         }
+}
+```
+
+This is for C2B success -- The Payment has been made --
+
+```php
+{
+    "success":true,
+    "data":{
+        "appName":"tpay",
+        "referenceCode":"TP98219CEFFC",
+        "phoneNumber":254716298347,
+        "transactionID":"NGC58L5ZCT",
+        "amount":50
+        }
+}
+```
+
+This is for C2B failed -- The Payment has not been made --
+
+```php
+{
+    "success":true,
+    "data":{
+        "appName":"tpay",
+        "referenceCode":"TP98219CEFFC",
+        }
+}
+```
+
+
 ## Version Guidance
 
 | Version | Status     | Packagist           | Namespace    | Repo                |
