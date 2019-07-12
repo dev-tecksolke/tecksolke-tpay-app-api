@@ -200,11 +200,11 @@ This is for B2C success -- The withdraw has been received --
 {
     "success":true,
     "data":{
-        "appName":"tpay",
-        "referenceCode":"TPFC9FFF2A3B",
-        "receiver":"254716298347 - Urbanus Aristariko Maina",
-        "transactionID":"NGC68LSJV4",
-        "amount":50
+        "appName":"",//Your App Name
+        "referenceCode":"",//This will be your reference Code that you used to make the request
+        "receiver":"",//The number that receives the payment
+        "transactionID":"",//M-Pesa transaction ID
+        "amount"://The amount withdrawn
          }
 }
 ```
@@ -215,8 +215,8 @@ This is for B2C failed -- The withdraw has not been received --
 {
     "success":false,
     "data":{
-        "appName":"tpay",
-        "referenceCode":"TPFC9FFF2A3B",
+        "appName":"",//Your App Name
+        "referenceCode":"",//This will be your reference Code that you used to make the request
          }
 }
 ```
@@ -227,11 +227,11 @@ This is for C2B success -- The Payment has been made --
 {
     "success":true,
     "data":{
-        "appName":"tpay",
-        "referenceCode":"TP98219CEFFC",
-        "phoneNumber":254716298347,
-        "transactionID":"NGC58L5ZCT",
-        "amount":50
+         "appName":"",//Your App Name
+         "referenceCode":"",//This will be your reference Code that you used to make the request
+         "receiver":"",//The number that receives the payment
+         "transactionID":"",//M-Pesa transaction ID
+         "amount"://The amount withdrawn
         }
 }
 ```
@@ -240,11 +240,11 @@ This is for C2B failed -- The Payment has not been made --
 
 ```php
 {
-    "success":true,
+    "success":false,
     "data":{
-        "appName":"tpay",
-        "referenceCode":"TP98219CEFFC",
-        }
+        "appName":"",//Your App Name
+        "referenceCode":"",//This will be your reference Code that you used to make the request
+         }
 }
 ```
 
