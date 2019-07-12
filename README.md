@@ -193,7 +193,7 @@ This how the api will be accessed via this package...
     
 ```
 
-## API Response(s)
+#### API Response(s)
 This is for B2C success -- The withdraw has been received --
 
 ```php
