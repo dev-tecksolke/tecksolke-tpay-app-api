@@ -91,7 +91,7 @@ This how the api will be accessed via this package...
 ```php
      /**
         * ---------------------------------
-        *  Test for requesting app balance [ GET Request  ]
+        *  Requesting app balance [ GET Request  ]
         * ---------------------------------
         * @throws \Exception
         */
@@ -229,7 +229,7 @@ This is for C2B success -- The Payment has been made --
     "data":{
          "appName":"",//Your App Name
          "referenceCode":"",//This will be your reference Code that you used to make the request
-         "receiver":"",//The number that makes the payment
+         "phoneNumber":"",//The number that makes the payment
          "transactionID":"",//M-Pesa transaction ID
          "amount"://The amount deposited/Paid
         }
