@@ -194,6 +194,18 @@ This how the api will be accessed via this package...
 ```
 
 #### API Response(s)
+This is for Express Payment success -- The express payment callback will only be sent if the client pays --
+
+```php
+{
+    "success":true,
+    "data":{
+    "amount":1,//This will be the amount paid to your application
+    "referenceCode":"TP0******6F7"//This the reference code you used to make your request
+    }
+}
+```
+
 This is for B2C success -- The withdraw has been received --
 
 ```php
