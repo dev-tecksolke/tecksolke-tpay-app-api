@@ -12,7 +12,7 @@
   <img src="https://img.shields.io/github/stars/dev-tecksolke/tecksolke-tpay-app-api.svg">
   </a>
   <br><br>
-  <img src="http://s.4cdn.org/image/title/105.gif">
+  <img src="https://tpay.co.ke/img/tpay-api.gif">
 </p>
 
 T-Pay API is REST-API that makes it easy for one to make request to the T-Pay Payment Gateway for his/her App.
