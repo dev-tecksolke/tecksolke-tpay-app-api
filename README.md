@@ -215,7 +215,7 @@ This is for B2C success -- The withdraw has been received --
         "appName":"",//Your App Name
         "referenceCode":"",//This will be your reference Code that you used to make the request
         "receiver":"",//The number that receives the payment
-        "transactionID":"",//M-Pesa transaction ID
+        "transactionID":"",//Unique transaction ID
         "amount"://The amount withdrawn
          }
 }
@@ -242,7 +242,7 @@ This is for C2B success -- The Payment has been made --
          "appName":"",//Your App Name
          "referenceCode":"",//This will be your reference Code that you used to make the request
          "phoneNumber":"",//The number that makes the payment
-         "transactionID":"",//M-Pesa transaction ID
+         "transactionID":"",//Unique transaction ID
          "amount"://The amount deposited/Paid
         }
 }
