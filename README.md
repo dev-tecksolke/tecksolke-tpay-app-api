@@ -125,7 +125,7 @@ This how the api will be accessed via this package...
                 $options = [
                     'referenceCode' => '',//Unique referenceCode i.e TPXXXXX
                     'redirectURL' => '',//This is the URL that the user will be redirect after payment
-                    'resultURL' => '',//This is the url that will receive the response data after successful payment
+                    'resultURL' => '',//This is the url that will receive the response data after successful payment. Note that this has to be a post callback so remember to use post in your callback.
                     'amount' => 1,//amount to be paid 
                 ];
     
@@ -153,7 +153,7 @@ This how the api will be accessed via this package...
                    'phoneNumber' => '',//The phone number has to be 2547xxxxxxx
                    'referenceCode' => '',//The secret code should be unique in every request you send and must start with TPXXXX
                    'amount' => 1,//Amount has to be an integer and less than or equal to KES 70000
-                   'resultURL' => '',//This has to be your callback i.e https://mydomain/callback or http://mydomain/callback
+                   'resultURL' => '',//This has to be your callback i.e https://mydomain/callback or http://mydomain/callback. Also note that this has to be a post callback so remember to use post in your callback.
                ];
    
                //make the c2b stk push here
@@ -178,7 +178,7 @@ This how the api will be accessed via this package...
                    'phoneNumber' => '',//The phone number has to be 2547xxxxxxx
                    'referenceCode' => '',//The secret code should be unique in every request you send and must start with TPXXXX
                    'amount' => 1,//Amount has to be an integer and has to be greater than KES 10
-                   'resultURL' => '',//This has to be your callback i.e https://mydomain/callback or http://mydomain/callback
+                   'resultURL' => '',//This has to be your callback i.e https://mydomain/callback or http://mydomain/callback. Also note that this has to be a post callback so remember to use post in your callback.
                ];
    
                //make the b2c withdraw here
