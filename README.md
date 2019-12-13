@@ -265,7 +265,8 @@ This is for C2B failed -- The Payment has not been made --
 
 | Version | Status     | Packagist           | Namespace    | Repo                |
 |---------|------------|---------------------|--------------|---------------------|
-| 1.x     | Latest     | `tecksolke-tpay/app-api` | `TPay\API` | [v1.9.9](https://github.com/dev-tecksolke/tecksolke-tpay-app-api/tree/1.0)|
+| 1.x     | EOL     | `tecksolke-tpay/app-api` | `TPay\API` | [v1.9.9](https://github.com/dev-tecksolke/tecksolke-tpay-app-api/releases/tag/v1.9.9)|
+| 2.x     | Latest     | `tecksolke-tpay/app-api` | `TPay\API` | [v2.0.0](https://github.com/dev-tecksolke/tecksolke-tpay-app-api/releases/tag/v2.0.0)|
 
 [tpay-api-1-repo]: https://github.com/dev-tecksolke/tpay-api.git
 
