@@ -4,7 +4,8 @@
 namespace TPay\API\Urls;
 
 
-class Urls {
+class Urls
+{
     /**
      * -------------------------------------------------
      * Define all urls here for the t-pay endpoints

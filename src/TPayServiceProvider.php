@@ -4,14 +4,16 @@ namespace TPay\API;
 
 use Illuminate\Support\ServiceProvider;
 
-class TPayServiceProvider extends ServiceProvider {
+class TPayServiceProvider extends ServiceProvider
+{
     /**
      * --------------------
      * define the boot
      * method here
      * --------------------
      */
-    public function boot() {
+    public function boot()
+    {
         /**
          * -------------------------------------------------
          * load all the configurations for the package here
@@ -38,7 +40,8 @@ class TPayServiceProvider extends ServiceProvider {
      * method here too
      * ---------------------
      */
-    public function register() {
+    public function register()
+    {
         //TODO Nothing.....
     }
 

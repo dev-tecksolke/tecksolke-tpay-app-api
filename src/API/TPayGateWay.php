@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use TPay\API\Urls\Urls;
 
-class TPayGateWay {
+class TPayGateWay
+{
     /**
      * @var Client
      */
@@ -24,7 +25,8 @@ class TPayGateWay {
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->client = new Client([
             'base_uri' => config('tpay.end_point_url') . '/api/t-pay/v1/oauth2/',
             'timeout' => config('tpay.timeout'),
@@ -41,7 +43,8 @@ class TPayGateWay {
      * @return Exception
      * @throws Exception
      */
-    private function getAccessToken() {
+    private function getAccessToken()
+    {
         // Set the request options
         $options = [
             'headers' => [
@@ -70,7 +73,8 @@ class TPayGateWay {
      * @return mixed
      * -----------------------------------------------------------------
      */
-    private function cacheAccessToken() {
+    private function cacheAccessToken()
+    {
         return Cache::remember('t-pay-access-token', now()->addMinutes(config('tpay.token_session')), function () {
             return $this->getAccessToken();
         });
@@ -85,7 +89,8 @@ class TPayGateWay {
      * @throws Exception
      * ----------------------------------
      */
-    public function setRequestOptions(array $data) {
+    public function setRequestOptions(array $data)
+    {
         return [
             'headers' => [
                 'Accept' => 'application/json',
@@ -105,7 +110,8 @@ class TPayGateWay {
      * @param string $method
      * @return Exception|GuzzleException|string
      */
-    public function processRequest(string $url, array $options, $method = "POST") {
+    public function processRequest(string $url, array $options, $method = "POST")
+    {
         try {
             $response = (new TPayGateWay())->client->request($method, $url, $options);
 
