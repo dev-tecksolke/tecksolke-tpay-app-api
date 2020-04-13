@@ -6,7 +6,6 @@ namespace TPay\API\API;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\ServerException;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
@@ -108,7 +107,7 @@ class TPayGateWay
      * @param string $url
      * @param array $options
      * @param string $method
-     * @return Exception|GuzzleException|string
+     * @return string
      */
     public function processRequest(string $url, array $options, $method = "POST")
     {
@@ -124,9 +123,6 @@ class TPayGateWay
             $exception = $serverException->getResponse()->getBody()->getContents();
             Log::critical('server-exception' . $serverException->getMessage());
             return $exception;
-        } catch (GuzzleException $e) {
-            Log::critical($e->getMessage());
-            return $e->getMessage();
         }
     }
 }

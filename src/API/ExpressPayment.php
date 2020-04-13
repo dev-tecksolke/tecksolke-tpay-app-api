@@ -23,9 +23,7 @@ class ExpressPayment
     public static function expressPayment(array $options)
     {
         try {
-            $response = json_decode((new TPayGateWay())->processRequest(Urls::$express_payment_url, (new TPayGateWay())->setRequestOptions($options)));
-
-            return $response;
+            return json_decode((new TPayGateWay())->processRequest(Urls::$express_payment_url, (new TPayGateWay())->setRequestOptions($options)));
 
         } catch (Exception $exception) {
             throw  new Exception($exception->getMessage());
