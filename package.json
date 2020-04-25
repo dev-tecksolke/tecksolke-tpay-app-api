@@ -1,0 +1,11 @@
+{
+    "name": "tecksolke-tpay-app-api",
+    "version": "1.0.0",
+    "dependencies": {
+        "guzzlehttp/guzzle": "^6.5",
+        "ext-json": "*"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    }
+}

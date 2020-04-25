@@ -11,7 +11,7 @@ class AppB2C
 {
     /**
      * -------------------------
-     * Make B2c Request here
+     * Make B2c LumenFormRequest here
      * -------------------------
      * @param array $options
      * @return mixed

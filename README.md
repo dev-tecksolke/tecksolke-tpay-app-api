@@ -11,10 +11,17 @@
   <a href="https://github.com/dev-tecksolke/tecksolke-tpay-app-api/stargazers">
   <img src="https://img.shields.io/github/stars/dev-tecksolke/tecksolke-tpay-app-api.svg">
   </a>
+  <a href="https://packagist.org/packages/tecksolke-tpay/app-api">
+  <img src="https://poser.pugx.org/tecksolke-tpay/app-api/v/stable">
+  </a>
+  <a href="https://packagist.org/packages/tecksolke-tpay/app-api">
+  <img src="https://poser.pugx.org/tecksolke-tpay/app-api/downloads">
+  </a>
   <br><br>
   <img src="https://tpay.co.ke/img/tpay-api.gif">
 </p>
 
+## Introduction
 T-Pay API is REST-API that makes it easy for one to make request to the T-Pay Payment Gateway for his/her App.
 
 - The API is simple and easy to install.
@@ -91,7 +98,7 @@ This how the api will be accessed via this package...
 ```php
      /**
         * ---------------------------------
-        *  Requesting app balance [ GET Request  ]
+        *  Requesting app balance [ GET LumenFormRequest  ]
         * ---------------------------------
         * @throws \Exception
         */
@@ -115,7 +122,7 @@ This how the api will be accessed via this package...
 
         /**
          * ------------------
-         * Express Payment [ POST Request ]
+         * Express Payment [ POST LumenFormRequest ]
          * -----------------
          * This is used to directly get payment from
          * a client account to your application
@@ -142,7 +149,7 @@ This how the api will be accessed via this package...
    
        /**
         * ------------------------------------
-        * Making app stk push request for c2b  [ POST Request ]
+        * Making app stk push request for c2b  [ POST LumenFormRequest ]
         * ------------------------------------
         */
        public function appC2BSTKPush() {
@@ -167,7 +174,7 @@ This how the api will be accessed via this package...
    
        /**
         * ------------------------------------
-        * Making app withdraw request for b2c  [ POST Request ]
+        * Making app withdraw request for b2c  [ POST LumenFormRequest ]
         * ------------------------------------
         */
        public function appB2C() {
@@ -266,7 +273,7 @@ This is for C2B failed -- The Payment has not been made --
 | Version | Status     | Packagist           | Namespace    | Repo                |
 |---------|------------|---------------------|--------------|---------------------|
 | 1.x     | EOL     | `tecksolke-tpay/app-api` | `TPay\API` | [v1.9.9](https://github.com/dev-tecksolke/tecksolke-tpay-app-api/releases/tag/v1.9.9)|
-| 2.x     | Latest     | `tecksolke-tpay/app-api` | `TPay\API` | [v2.0.0](https://github.com/dev-tecksolke/tecksolke-tpay-app-api/releases/tag/v2.0.0)|
+| 2.x     | Latest     | `tecksolke-tpay/app-api` | `TPay\API` | [v2.1.1](https://github.com/dev-tecksolke/tecksolke-tpay-app-api/releases/tag/v2.1.1)|
 
 [tpay-api-1-repo]: https://github.com/dev-tecksolke/tpay-api.git
 
