@@ -5,10 +5,13 @@ namespace TPay\API\API;
 
 
 use Exception;
+use TPay\API\Traits\CentralProcessingGate;
 use TPay\API\Urls\Urls;
 
 class ExpressPayment
 {
+    use CentralProcessingGate;
+
     /**
      * ------------------------------------
      * Express Payment Page Redirection
@@ -20,10 +23,10 @@ class ExpressPayment
      * @return mixed
      * @throws Exception
      */
-    public static function expressPayment(array $options)
+    public function expressPayment(array $options)
     {
         try {
-            return json_decode((new TPayGateWay())->processRequest(Urls::$express_payment_url, (new TPayGateWay())->setRequestOptions($options)));
+            return json_decode($this->processRequest(Urls::$express_payment_url, $this->setRequestOptions($options)));
 
         } catch (Exception $exception) {
             throw  new Exception($exception->getMessage());

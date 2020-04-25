@@ -1,7 +1,6 @@
 <?php
 
-
-namespace TPay\API\API;
+namespace TPay\API\Traits;
 
 use Exception;
 use GuzzleHttp\Client;
@@ -11,7 +10,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use TPay\API\Urls\Urls;
 
-class TPayGateWay
+trait CentralProcessingGate
 {
     /**
      * @var Client
@@ -112,7 +111,7 @@ class TPayGateWay
     public function processRequest(string $url, array $options, $method = "POST")
     {
         try {
-            $response = (new TPayGateWay())->client->request($method, $url, $options);
+            $response = $this->client->request($method, $url, $options);
 
             return ($response->getBody()->getContents());
         } catch (ClientException $clientException) {

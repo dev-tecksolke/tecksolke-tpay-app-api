@@ -5,10 +5,13 @@ namespace TPay\API\API;
 
 
 use Exception;
+use TPay\API\Traits\CentralProcessingGate;
 use TPay\API\Urls\Urls;
 
 class AppBalances
 {
+    use CentralProcessingGate;
+
     /**
      * -----------------------
      * Get app balances here
@@ -17,10 +20,10 @@ class AppBalances
      * @return mixed
      * @throws Exception
      */
-    public static function appBalances(array $options)
+    public function appBalances(array $options)
     {
         try {
-            return json_decode((new TPayGateWay())->processRequest(Urls::$app_balances_url, (new TPayGateWay())->setRequestOptions($options), 'GET'));
+            return json_decode($this->processRequest(Urls::$app_balances_url, $this->setRequestOptions($options), 'GET'));
 
         } catch (Exception $exception) {
             throw  new Exception($exception->getMessage());

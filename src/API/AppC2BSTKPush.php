@@ -4,10 +4,13 @@
 namespace TPay\API\API;
 
 use Exception;
+use TPay\API\Traits\CentralProcessingGate;
 use TPay\API\Urls\Urls;
 
 class AppC2BSTKPush
 {
+    use CentralProcessingGate;
+
     /**
      * ----------------------------------------------
      * Make request to the c2b here to the t-pay
@@ -16,10 +19,10 @@ class AppC2BSTKPush
      * @return mixed
      * @throws Exception
      */
-    public static function appC2BSTKPush(array $options)
+    public function appC2BSTKPush(array $options)
     {
         try {
-            return json_decode((new TPayGateWay())->processRequest(Urls::$app_c2b_stk_url, (new TPayGateWay())->setRequestOptions($options)));
+            return json_decode($this->processRequest(Urls::$app_c2b_stk_url, $this->setRequestOptions($options)));
 
         } catch (Exception $exception) {
             throw  new Exception($exception->getMessage());

@@ -100,8 +100,9 @@ This how the api will be accessed via this package...
         * ---------------------------------
         *  Requesting app balance [ GET LumenFormRequest  ]
         * ---------------------------------
-        * @throws \Exception
+        * @throws Exception
         */
+       use TPay\API\API\AppBalances;
        public function appBalance() {
            try {
                //Set request options as shown here
@@ -110,10 +111,10 @@ This how the api will be accessed via this package...
                ];
    
                //make request here
-               $response = AppBalances::appBalances($options);
+               $response = (new AppBalances())->appBalances($options);
    
                //continue with what you what to do with the $response here
-           } catch (\Exception $exception) {
+           } catch (Exception $exception) {
                //TODO If an exception occurs
            }
        }
@@ -127,6 +128,7 @@ This how the api will be accessed via this package...
          * This is used to directly get payment from
          * a client account to your application
          */
+        use TPay\API\API\ExpressPayment;
         public function expressPayment() {
             try {
                 $options = [
@@ -137,7 +139,7 @@ This how the api will be accessed via this package...
                 ];
     
                 //make the request here
-                $response = ExpressPayment::expressPayment($options);
+                $response = (new ExpressPayment())->expressPayment($options);
     
                 //proceed with the response
     
@@ -152,6 +154,7 @@ This how the api will be accessed via this package...
         * Making app stk push request for c2b  [ POST LumenFormRequest ]
         * ------------------------------------
         */
+       use TPay\API\API\AppC2BSTKPush;
        public function appC2BSTKPush() {
            try {
                //Set request options as shown here
@@ -164,7 +167,7 @@ This how the api will be accessed via this package...
                ];
    
                //make the c2b stk push here
-               $response = AppC2BSTKPush::appC2BSTKPush($options);
+               $response = (new AppC2BSTKPush())->appC2BSTKPush($options);
    
                //continue with what you what to do with the $response here
            } catch (\Exception $exception) {
@@ -177,6 +180,7 @@ This how the api will be accessed via this package...
         * Making app withdraw request for b2c  [ POST LumenFormRequest ]
         * ------------------------------------
         */
+       use TPay\API\API\AppB2C;
        public function appB2C() {
            try {
                //Set request options as shown here
@@ -189,7 +193,7 @@ This how the api will be accessed via this package...
                ];
    
                //make the b2c withdraw here
-               $response = AppB2C::appB2C($options);
+               $response = (new AppB2C())->appB2C($options);
    
                //continue with what you what to do with the $response here
            } catch (\Exception $exception) {
@@ -273,7 +277,7 @@ This is for C2B failed -- The Payment has not been made --
 | Version | Status     | Packagist           | Namespace    | Repo                |
 |---------|------------|---------------------|--------------|---------------------|
 | 1.x     | EOL     | `tecksolke-tpay/app-api` | `TPay\API` | [v1.9.9](https://github.com/dev-tecksolke/tecksolke-tpay-app-api/releases/tag/v1.9.9)|
-| 2.x     | Latest     | `tecksolke-tpay/app-api` | `TPay\API` | [v2.1.1](https://github.com/dev-tecksolke/tecksolke-tpay-app-api/releases/tag/v2.1.1)|
+| 2.x     | Latest     | `tecksolke-tpay/app-api` | `TPay\API` | [v2.2.2](https://github.com/dev-tecksolke/tecksolke-tpay-app-api/releases/tag/v2.2.2)|
 
 [tpay-api-1-repo]: https://github.com/dev-tecksolke/tpay-api.git
 
