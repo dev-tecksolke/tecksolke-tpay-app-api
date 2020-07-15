@@ -98,7 +98,7 @@ This how the api will be accessed via this package...
 ```php
      /**
         * ---------------------------------
-        *  Requesting app balance [ GET LumenFormRequest  ]
+        *  Requesting app balance [ GET Request  ]
         * ---------------------------------
         * @throws Exception
         */
@@ -123,7 +123,7 @@ This how the api will be accessed via this package...
 
         /**
          * ------------------
-         * Express Payment [ POST LumenFormRequest ]
+         * Express Payment [ POST Request ]
          * -----------------
          * This is used to directly get payment from
          * a client account to your application
@@ -151,7 +151,7 @@ This how the api will be accessed via this package...
    
        /**
         * ------------------------------------
-        * Making app stk push request for c2b  [ POST LumenFormRequest ]
+        * Making app stk push request for c2b  [ POS Request ]
         * ------------------------------------
         */
        use TPay\API\API\AppC2BSTKPush;
@@ -177,7 +177,7 @@ This how the api will be accessed via this package...
    
        /**
         * ------------------------------------
-        * Making app withdraw request for b2c  [ POST LumenFormRequest ]
+        * Making app withdraw request for b2c  [ POST Request ]
         * ------------------------------------
         */
        use TPay\API\API\AppB2C;
